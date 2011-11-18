@@ -1,9 +1,13 @@
 AmericanLang220::Application.routes.draw do
+  devise_for :users
+
   get "pages/home"
 
   get "pages/about"
 
   get "pages/channels"
+
+  root :to => "pages#home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
