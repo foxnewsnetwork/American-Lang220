@@ -1,13 +1,18 @@
 AmericanLang220::Application.routes.draw do
   devise_for :users
+  resources :betasignups
 
   get "pages/home"
 
   get "pages/about"
 
   get "pages/channels"
+  match "create", :to => "pages#create"
 
-  root :to => "pages#home"
+  match "/success", :to => "pages#success"
+
+
+  root :to => "pages#holder"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
