@@ -16,6 +16,7 @@ AmericanLang220::Application.routes.draw do
   get "ads/index"
 
   devise_for :users
+  devise_for :corporations
   resources :betasignups
 
   get "pages/home"

@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+
+  <%= link_to('Sign out', destroy_corporation_session_path, :method => :delete, :class => 'links') %>
+<% else %>
+
+  <%= link_to('Sign in as Corporation', new_corporation_session_path, :class => 'links')  %>
+<% end %>
