@@ -1,0 +1,63 @@
+<%= form_for @castersignup, :url => { :action => "create" }, :html => {:class => "castersignup_form"} do |f| %>
+  <%= render "error_messages", :object => f.object %> 
+<div class="row">
+  <div class="span">
+    <br>
+    Username <br>
+    <br><br>
+    Email <br>
+    <br><br>
+    Youtube <br>
+    <br><br>
+    Twitter <br>
+    <br><br>
+    Facebook <br>
+    <br><br>
+    Organization <br>
+    <br><br>
+    Referrer <br>
+    <br><br>
+  </div>
+  <div class="span4">
+    <%= f.text_field :username, :style=>"width: 180px;", :placeholder=>"required" %> 
+    <br>
+    <br>
+    <%= f.text_field :email,  :style=>"width: 180px;", :placeholder=>"required" %> 
+    <br>
+    <br>
+    <%= f.text_field :youtube,  :style=>"width: 180px;", :placeholder=>"" %> 
+    <br>
+    <br>
+    <%= f.text_field :twitter,  :style=>"width: 180px;", :placeholder=>"" %> 
+    <br>
+    <br>
+    <%= f.text_field :facebook,   :style=>"width: 180px;", :placeholder=>"" %> 
+    <br>
+    <br>
+    <%= f.text_field :organization,  :style=>"width: 180px;",  :placeholder=>"" %> 
+    <br>
+    <br>
+
+    <%= f.text_field :referrer,  :style=>"width: 180px;",  :placeholder=>"" %> 
+    <br>
+    <br>
+  </div>
+  <div class="span">
+    Full Name
+    <br><br><br>
+    Details 
+    <br><br><br>
+  </div>
+  <div class="span5">
+    <%= f.text_field :fullname,  :placeholder=>"required" %> 
+    <br>
+    <br>
+    <%= f.text_area :details,  :placeholder=>"What do you usually broadcast? Anything else that would help your application?" %> 
+  </div>
+</div>
+<br>
+<br>
+
+<button type="submit" class="btn primary large" id="castersignup_submit" name="commit">Sign up for Beta</button>
+<% end %>
+<br>
