@@ -3,14 +3,12 @@ AmericanLang220::Application.routes.draw do
   resources :betasignups
 
   get "pages/home"
-
   get "pages/about"
-
   get "pages/channels"
+
   match "create", :to => "pages#create"
-
   match "/success", :to => "pages#success"
-
+  match "/promotion", :to => "pages#promotion"
 
   root :to => "pages#holder"
 

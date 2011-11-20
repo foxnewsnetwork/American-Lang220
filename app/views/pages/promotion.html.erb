@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Ingidio</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le styles -->
-
-  <%= stylesheet_link_tag @a, :media => 'screen' %>
-    <style type="text/css">
-      body {
-	background-image:url('../images/terran1.jpg');
-        padding-top: 60px;
-      }
-    </style>
-
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  </head>
-
-  <body>
-
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="/">Ingido</a>
-          <ul class="nav">
-            <li class="active"><a href="#">Promotion</a></li>
-            <li><a href="#about"></a></li>
-            <li><a href="#contact"></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+    <%= render 'layouts/toolbar' %>
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
@@ -94,6 +50,4 @@
 	
 
     </div> <!-- /container -->
-
-  </body>
-</html>
+<%= render 'layouts/footer' %>
