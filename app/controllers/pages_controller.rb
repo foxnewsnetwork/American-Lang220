@@ -6,14 +6,11 @@ class PagesController < ApplicationController
   end
 
   def about
-    @toolbar = {:about => 'active', :promotion => '', :home => 'active', :caster => '', :channel => ''}
+    @toolbar = {:about => 'active', :promotion => '', :home => '', :caster => '', :channel => ''}
   end
 
   def promotion
-    @a = 'bootstrap.css'
-    @b = ''
-    @c = ''
-    @toolbar = {:about => '', :promotion => 'active', :home => 'active', :caster => '', :channel => ''}
+    @toolbar = {:about => '', :promotion => 'active', :home => '', :caster => '', :channel => ''}
   end
 
   def caster
