@@ -1,0 +1,2 @@
+module CastersignupsHelper
+end
