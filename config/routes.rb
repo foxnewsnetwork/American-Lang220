@@ -1,4 +1,20 @@
 AmericanLang220::Application.routes.draw do
+  get "communications/transfer"
+
+  get "ads/create"
+
+  get "ads/destroy"
+
+  get "ads/show"
+
+  get "ads/edit"
+
+  get "ads/click"
+
+  get "ads/close"
+
+  get "ads/index"
+
   devise_for :users
   resources :betasignups
 
