@@ -2,18 +2,23 @@ class PagesController < ApplicationController
   layout 'application', :except => :holder
 
   def home
+    @toolbar = {:about => '', :promotion => '', :home => 'active', :caster => '', :channel => ''}
   end
 
   def about
+    @toolbar = {:about => 'active', :promotion => '', :home => '', :caster => '', :channel => ''}
   end
 
   def promotion
+    @toolbar = {:about => '', :promotion => 'active', :home => '', :caster => '', :channel => ''}
   end
 
   def caster
+    @toolbar = {:about => '', :promotion => '', :home => '', :caster => 'active', :channel => ''}
   end
 
   def channels
+    @toolbar = {:about => '', :promotion => '', :home => '', :caster => '', :channel => 'active'}
   end
 
   def holder

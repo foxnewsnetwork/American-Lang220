@@ -1,18 +1,20 @@
 AmericanLang220::Application.routes.draw do
+  get "castersignups/home"
+  get "castersignups/success"
+  get "castersignups/failure"
+  get "castersignups/faq"
+  get "castersignups/overview"
+  get "castersignups/perks"
+  get "castersignups/partners"
+
   get "communications/transfer"
 
   get "ads/create"
-
   get "ads/destroy"
-
   get "ads/show"
-
   get "ads/edit"
-
   get "ads/click"
-
   get "ads/close"
-
   get "ads/index"
 
   devise_for :users
@@ -20,14 +22,20 @@ AmericanLang220::Application.routes.draw do
   resources :betasignups
 
   get "pages/home"
-
   get "pages/about"
-
   get "pages/channels"
+
   match "create", :to => "pages#create"
-
   match "/success", :to => "pages#success"
+  match "/promotion", :to => "pages#promotion"
 
+  
+  match "/casters", :to=>"castersignups#overview"
+  match "/caster/signup/overview", :to=>"castersignups#overview"
+  match "/caster/signup/apply", :to=>"castersignups#apply"
+  match "/caster/signup/perks", :to=>"castersignups#perks"
+  match "/caster/signup/faq", :to=>"castersignups#faq"
+  match "/caster/signup/partners", :to=>"castersignups#partners"
 
   root :to => "pages#holder"
 
