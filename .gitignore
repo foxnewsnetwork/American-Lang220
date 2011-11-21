@@ -5,3 +5,5 @@ tmp/
 config/database.yml
 .rvmrc
 .idea/
+*.swp
+*/*.swp
