@@ -11,6 +11,10 @@ class CreateAdstats < ActiveRecord::Migration
       t.timestamps
     end
   end
+  
+  add_index :adstats, :ad_id
+  add_index :adstats, :user_id
+  add_index :adstats, [:ad_id :user_id], :unique => true
 
   def self.down
     drop_table :adstats
