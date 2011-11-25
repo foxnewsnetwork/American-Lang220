@@ -9,6 +9,7 @@ class AddDeviseColumnsToCorporation < ActiveRecord::Migration
     end
   end
 
+	# The following needs to be fixed so that db:rollbacks don't get stuck here
   def self.down
     change_table :corporations do |t|
       t.remove :encrypted_password
