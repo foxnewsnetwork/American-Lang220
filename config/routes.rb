@@ -1,4 +1,5 @@
 AmericanLang220::Application.routes.draw do
+
   get "castersignups/home"
   get "castersignups/success"
   get "castersignups/failure"
@@ -8,14 +9,13 @@ AmericanLang220::Application.routes.draw do
   get "castersignups/partners"
 
   get "communications/transfer"
-
-  get "ads/create"
-  get "ads/destroy"
-  get "ads/show"
-  get "ads/edit"
-  get "ads/click"
-  get "ads/close"
-  get "ads/index"
+	
+	# Full access for corporations
+	scope "corporation" do
+		resources :ads
+	end
+	# Normalfags can only view the ads
+	resources :ads, :only => [ :index, :show ]
 
   devise_for :users
   devise_for :corporations
