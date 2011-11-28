@@ -1,5 +1,5 @@
 class CastersignupsController < ApplicationController
-  @@toolbar_hash = {:home=>'', :success=>'', :failure=>'',:faq=>'', :overview=>'', :perks=>'', :partners=>'', :apply=>''}
+   @@toolbar_hash = {:home=>'', :success=>'', :failure=>'',:faq=>'', :overview=>'', :perks=>'', :partners=>'', :apply=>''}
   
   def home
     @toolbar = @@toolbar_hash.clone
@@ -7,9 +7,13 @@ class CastersignupsController < ApplicationController
   end
 
   def success
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:apply]='active'
   end
 
   def failure
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:apply]='active'
   end
 
   def faq
@@ -27,7 +31,7 @@ class CastersignupsController < ApplicationController
     @toolbar[:perks]='active'
   end
 
-  def partners
+  def partner
     @toolbar = @@toolbar_hash.clone
     @toolbar[:partners]='active'
   end
@@ -35,5 +39,44 @@ class CastersignupsController < ApplicationController
   def apply
     @toolbar = @@toolbar_hash.clone
     @toolbar[:apply]='active'
+    @castersignup = Castersignup.new
   end
+
+  def create
+    puts "Created is called!"
+    @castersignup = Castersignup.new(params[:castersignup])
+
+    if request.xhr?
+      puts 'xhr request'
+    end
+
+    if @castersignup.save
+      flash[:success] = "Sign Up Success!"
+
+      respond_to do |format|
+        format.html { redirect_to '/caster/signup/success' }
+        format.js
+      end
+    else
+      flash[:failure] = "Failure Failed!"
+
+      respond_to do |format|
+        format.html { redirect_to '/caster/signup/failure' }
+        format.js
+      end
+    end
+  end
+
+
+  def success
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:apply]='active'
+  end
+ 
+  def failure
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:apply]='active'
+  end
+
+
 end

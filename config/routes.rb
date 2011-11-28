@@ -1,4 +1,5 @@
 AmericanLang220::Application.routes.draw do
+
   get "castersignups/home"
   get "castersignups/success"
   get "castersignups/failure"
@@ -8,14 +9,13 @@ AmericanLang220::Application.routes.draw do
   get "castersignups/partners"
 
   get "communications/transfer"
-
-  get "ads/create"
-  get "ads/destroy"
-  get "ads/show"
-  get "ads/edit"
-  get "ads/click"
-  get "ads/close"
-  get "ads/index"
+	
+	# Full access for corporations
+	scope "corporation" do
+		resources :ads
+	end
+	# Normalfags can only view the ads
+	resources :ads, :only => [ :index, :show ]
 
   resources :ads do
     member do
@@ -34,14 +34,19 @@ AmericanLang220::Application.routes.draw do
   match "create", :to => "pages#create"
   match "/success", :to => "pages#success"
   match "/promotion", :to => "pages#promotion"
+  match "/channel", :to => "pages#channel"
+  match "/contact", :to => "pages#contact"
+  match "/about", :to => "pages#about"
+  match "/leader", :to => "pages#leader"
+  match "/promotion/partners", :to => "pages#partner" 
 
-  
   match "/casters", :to=>"castersignups#overview"
   match "/caster/signup/overview", :to=>"castersignups#overview"
   match "/caster/signup/apply", :to=>"castersignups#apply"
   match "/caster/signup/perks", :to=>"castersignups#perks"
   match "/caster/signup/faq", :to=>"castersignups#faq"
-  match "/caster/signup/partners", :to=>"castersignups#partners"
+  match "/caster/signup/partners", :to=>"castersignups#partner"
+  match "/caster/signup/create", :to=>"castersignups#create"
 
   root :to => "pages#holder"
 

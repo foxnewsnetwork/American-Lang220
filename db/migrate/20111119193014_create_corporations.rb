@@ -1,10 +1,11 @@
 class CreateCorporations < ActiveRecord::Migration
   def self.up
     create_table :corporations do |t|
-      t.integer :corporation_id
+      t.string :name
 
       t.timestamps
     end
+    add_index :corporations, :name
   end
 
   def self.down

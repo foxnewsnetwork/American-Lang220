@@ -17,4 +17,7 @@ $(document).ready(function() {
   $("#new_betasignups").submitWithAjax();
 })
 
+$(document).ready(function() {
+  $("#new_castersignup").submitWithAjax();
+})
 

@@ -1,24 +1,39 @@
 class PagesController < ApplicationController
   layout 'application', :except => :holder
+   @@toolbar_hash = {:about => '', :promotion => '', :home => '', :caster => '', :channel => '', :partner=>'', :leader=>'', :contact=>'', :about=>''}
 
   def home
-    @toolbar = {:about => '', :promotion => '', :home => 'active', :caster => '', :channel => ''}
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:home] = 'active'
+  end
+
+  def partner
   end
 
   def about
-    @toolbar = {:about => 'active', :promotion => '', :home => '', :caster => '', :channel => ''}
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:about] = 'active'
   end
 
   def promotion
-    @toolbar = {:about => '', :promotion => 'active', :home => '', :caster => '', :channel => ''}
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:promotion] = 'active'
   end
 
   def caster
-    @toolbar = {:about => '', :promotion => '', :home => '', :caster => 'active', :channel => ''}
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:caster] = 'active'
   end
 
-  def channels
-    @toolbar = {:about => '', :promotion => '', :home => '', :caster => '', :channel => 'active'}
+  def channel
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:channel] = 'active'
+  end
+
+  def partner
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:partner] = 'active'
+    
   end
 
   def holder
@@ -30,10 +45,9 @@ class PagesController < ApplicationController
 
   def create
     @betasignup = Betasignups.new(params[:betasignups])
-    @a = 'main.css'
-    @b = 'thickbox.css'
-    @c = 'reset.css'
 
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:partner] = 'active'
     if request.xhr?
       puts 'xhr request'
     end
@@ -53,15 +67,30 @@ class PagesController < ApplicationController
 
    def index
     @betasignups = Betasignups.all
-    @a = 'main.css'
-    @b = 'thickbox.css'
-    @c = 'reset.css'
+
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:index] = 'active'
    end
 
   def success
-    @a = 'main.css'
-    @b = 'thickbox.css'
-    @c = 'reset.css'
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:success] = 'active'
+  end
+
+  def leader
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:leader] = 'active'
+  end
+
+
+  def contact 
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:contact] = 'active'
+  end
+
+  def about
+   @toolbar = @@toolbar_hash.clone
+   @toolbar[:about] = 'active'
   end
 
 
