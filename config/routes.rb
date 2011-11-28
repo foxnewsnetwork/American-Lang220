@@ -17,6 +17,12 @@ AmericanLang220::Application.routes.draw do
   get "ads/close"
   get "ads/index"
 
+  resources :ads do
+    member do
+      get 'crop'
+    end
+  end
+
   devise_for :users
   devise_for :corporations
   resources :betasignups
