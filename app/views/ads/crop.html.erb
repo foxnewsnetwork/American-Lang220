@@ -29,22 +29,17 @@ function update_crop(coords) {
 </script>
 <% end %>
 
-<%= image_tag @ad.photo.url, :id => "cropbox" %>
-
-<div id= "errors">
 
 
+<%= image_tag @ad.photo.url(:large), :id => "cropbox" %>
+
+     <h4>Preview:</h4>
+<div style="width:100px; height:100px; overflow:hidden">
+  <%= image_tag @ad.photo.url(:large), :id => "preview" %>
 </div>
-        <%= form_for @ad,:html => { :multipart => true },:remote => true do |f| %>
-<%= render 'shared/error_messages', :object => f.object %>
-
-
-    <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+<%= form_for @ad do |f| %>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
     <%= f.hidden_field attribute, :id => attribute %>
   <% end %>
-   <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
+  <p><%= f.submit "Crop" %></p>
 <% end %>
-
-

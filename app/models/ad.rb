@@ -18,7 +18,7 @@ class Ad < ActiveRecord::Base
   validates :corporation_id, :presence => true
 
   # Accessible traits
-  attr_accessible :name
+  attr_accessible :name, :photo
 
   # Setting the statistics table to be shared with the user
   has_many :adstats, :foreign_key => "ad_id", :dependent => :destroy

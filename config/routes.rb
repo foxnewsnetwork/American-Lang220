@@ -12,10 +12,14 @@ AmericanLang220::Application.routes.draw do
 	
 	# Full access for corporations
 	scope "corporation" do
-		resources :ads
+		resources :ads do
+      member do
+      get 'crop'
+     end
+
+   end
 	end
 	# Normalfags can only view the ads
-	resources :ads, :only => [ :index, :show ]
 
   resources :ads do
     member do
@@ -24,7 +28,10 @@ AmericanLang220::Application.routes.draw do
   end
 
   devise_for :users
-  devise_for :corporations
+  devise_for :corporations do
+    get '/corporations/sign_out' => 'devise/sessions#destroy'
+
+  end
   resources :betasignups
 
   get "pages/home"

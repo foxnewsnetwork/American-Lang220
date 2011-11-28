@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20111120065718) do
-=======
 ActiveRecord::Schema.define(:version => 20111121012451) do
->>>>>>> 4edf8a0b24161b3a4f59ae49da3e45f1b24a9f4c
 
   create_table "ads", :force => true do |t|
     t.string   "name"
     t.integer  "corporation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "adstats", :force => true do |t|
@@ -32,10 +32,6 @@ ActiveRecord::Schema.define(:version => 20111121012451) do
     t.integer  "closes",     :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   add_index "adstats", ["ad_id", "user_id"], :name => "index_adstats_on_ad_id_and_user_id", :unique => true
