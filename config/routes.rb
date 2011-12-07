@@ -40,7 +40,7 @@ AmericanLang220::Application.routes.draw do
 
   match "create", :to => "pages#create"
   match "/success", :to => "pages#success"
-  match "/promotion", :to => "pages#promotion"
+  match "/promotion", :to => "advertisersignups#overview"
   match "/channel", :to => "pages#channel"
   match "/contact", :to => "pages#contact"
   match "/about", :to => "pages#about"
@@ -54,6 +54,13 @@ AmericanLang220::Application.routes.draw do
   match "/caster/signup/faq", :to=>"castersignups#faq"
   match "/caster/signup/partners", :to=>"castersignups#partner"
   match "/caster/signup/create", :to=>"castersignups#create"
+  
+  match "/advertiser/signup/overview", :to=>"advertisersignups#overview"
+  match "/advertiser/signup/apply", :to=>"advertisersignups#apply"
+  match "/advertiser/signup/demo", :to=>"advertisersignups#demo"
+  match "/advertiser/signup/faq", :to=>"advertisersignups#faq"
+#  match "/advertiser/signup/partners", :to=>"advertisersignups#partner"
+#  match "/advertiser/signup/create", :to=>"advertisersignups#create"
 
   root :to => "pages#holder"
 

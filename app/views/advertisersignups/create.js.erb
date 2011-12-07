@@ -1,0 +1,14 @@
+$("#flash_success").remove();
+$("#flash_failure").remove();
+$(".error_form").remove();
+
+if ('<%= flash.delete(:failure) %>' == '') {
+  $(".message_box").hide("slow");
+  $(".message_box").before('<%= escape_javascript(render 'successmessage') %>');
+  $("#success_message").show("slow");
+} else {
+  $("#new_castersignup").before('<%= flash.delete(:failure) %><%= escape_javascript(render 'errors') %>');
+  $(".error_form").show("slow");
+  $("#new_castersignup").before('<div id="flash_success"><%= escape_javascript(flash.delete(:success)) %></div>');
+  $("#new_castersignup")[0].reset();
+}

@@ -1,0 +1,43 @@
+    <%= render 'layouts/advertisersignups/toolbar' %>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+      <div class="span" >
+        <h1>Join Our Network!</h1>
+	<p>We will get back to you as soon as we can!</p>
+<br>
+    <%= form_tag("/apply", :method => "post") do %>
+<br>
+<p>
+    <%= label_tag(:contact_name, "Contact Name:") %>
+    <%= text_field_tag(:contact_name) %>
+</p>
+<br>
+<p>
+    <%= label_tag(:email, "Your Email:") %>
+    <%= text_field_tag(:email) %>
+</p>
+<br>
+<p>
+    <%= label_tag(:organization, "Organization:") %>
+    <%= text_field_tag(:organization) %>
+</p>
+<br>
+<p>
+    <%= label_tag(:message, "Message:") %>
+    <%= text_area_tag :message %>
+</p>
+<br>
+    <button style='margin-left:18em' type="submit" class="btn primary large" id="advertisersignup_submit" name="commit">Submit!</button>
+  <% end %>
+<br>
+</div>
+<!--<div class="span6" style='float:right'>
+<img src="/images/r6_ad.jpg" style="width: 100%">
+</img>
+</div>-->
+      </div>
+	<%= render 'layouts/footer' %>
+
+    </div> 
