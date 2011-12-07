@@ -60,7 +60,9 @@ AmericanLang220::Application.routes.draw do
   match "/advertiser/signup/demo", :to=>"advertisersignups#demo"
   match "/advertiser/signup/faq", :to=>"advertisersignups#faq"
 #  match "/advertiser/signup/partners", :to=>"advertisersignups#partner"
-#  match "/advertiser/signup/create", :to=>"advertisersignups#create"
+  match "/advertiser/signup/create", :to=>"advertisersignups#create"
+  match "/advertiser/signup/success", :to=>"advertisersignups#success"
+
 
   root :to => "pages#holder"
 
