@@ -9,6 +9,7 @@ group :development do
   gem 'faker', '~>1.0.0'
   gem 'nifty-generators'
   gem 'annotate', '2.4.0'
+  gem "letter_opener"
 end
 
 group :test do

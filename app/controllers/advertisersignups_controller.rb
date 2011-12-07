@@ -29,13 +29,21 @@ class AdvertisersignupsController < ApplicationController
   def apply
     @toolbar = @@toolbar_hash.clone
     @toolbar[:apply]='active'
+    @advertisersignup = AdvertiserSignUp.new 
   end
 
   def create
     @toolbar = @@toolbar_hash.clone
     @toolbar[:apply]='active'
     AdvertiserSignUpMailer.welcome_email.deliver
-    render :action => "success"
+    @advertisersignup = AdvertiserSignUp.new(params[:advertisersignup])
+    if @advertisersignup.save
+      flash[:success] = "Success!"
+      render :action => "success"
+    else
+      flash[:failure] = "Something went wrong. Please try again."
+      redirect_to :action=>"apply"
+    end
   end
   
   def success

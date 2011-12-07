@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121012451) do
+ActiveRecord::Schema.define(:version => 20111207095350) do
 
   create_table "ads", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(:version => 20111121012451) do
   add_index "adstats", ["ad_id", "user_id"], :name => "index_adstats_on_ad_id_and_user_id", :unique => true
   add_index "adstats", ["ad_id"], :name => "index_adstats_on_ad_id"
   add_index "adstats", ["user_id"], :name => "index_adstats_on_user_id"
+
+  create_table "advertiser_sign_ups", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "org"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "betasignups", :force => true do |t|
     t.string   "username"

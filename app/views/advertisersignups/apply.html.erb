@@ -6,27 +6,34 @@
       <div class="span" >
         <h1>Join Our Network!</h1>
 	<p>We will get back to you as soon as we can!</p>
+<% flash.each do |key, msg| %>
+  <div id="<%= key %>">
+    <p style="float:right;"><%= link_to_function 'X', "Effect.Fade('#{key}')" %></p>
+    <p><%= msg %></p>
+    <div class="clear"></div>
+  </div>
+<% end %>
 <br>
     <%= form_tag("/advertiser/signup/create", :method => "post") do %>
 <br>
 <p>
     <%= label_tag(:contact_name, "Contact Name:") %>
-    <%= text_field_tag(:contact_name) %>
+    <%= text_field_tag("advertisersignup[name]") %>
 </p>
 <br>
 <p>
     <%= label_tag(:email, "Your Email:") %>
-    <%= text_field_tag(:email) %>
+    <%= text_field_tag("advertisersignup[email]") %>
 </p>
 <br>
 <p>
     <%= label_tag(:organization, "Organization:") %>
-    <%= text_field_tag(:organization) %>
+    <%= text_field_tag("advertisersignup[org]") %>
 </p>
 <br>
 <p>
     <%= label_tag(:message, "Message:") %>
-    <%= text_area_tag :message %>
+    <%= text_area_tag "advertisersignup[message]" %>
 </p>
 <br>
     <button style='margin-left:18em' type="submit" class="btn primary large" id="advertisersignup_submit" name="commit">Submit!</button>
