@@ -4,6 +4,7 @@ require File.expand_path('../application', __FILE__)
 # Initialize the rails application
 AmericanLang220::Application.initialize!
 
+<<<<<<< HEAD
 
 config.action_mailer.raise_delivery_errors = true
 
@@ -21,3 +22,5 @@ config.action_mailer.smtp_settings = {
 }
 
 
+=======
+>>>>>>> 3442aeb7322af232ccf0cdac03c16cfc50bfa3a0
