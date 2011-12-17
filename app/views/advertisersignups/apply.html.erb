@@ -6,14 +6,6 @@
       <div class="span" >
         <h1>Join Our Network!</h1>
 	<p>We will get back to you as soon as we can!</p>
-<<<<<<< HEAD
-<br>
-    <%= form_tag("/apply", :method => "post") do %>
-<br>
-<p>
-    <%= label_tag(:contact_name, "Contact Name:") %>
-    <%= text_field_tag(:contact_name) %>
-=======
 <% flash.each do |key, msg| %>
   <div id="<%= key %>">
     <p style="float:right;"><%= link_to_function 'X', "Effect.Fade('#{key}')" %></p>
@@ -27,34 +19,21 @@
 <p>
     <%= label_tag(:contact_name, "Contact Name:") %>
     <%= text_field_tag("advertisersignup[name]") %>
->>>>>>> 3442aeb7322af232ccf0cdac03c16cfc50bfa3a0
 </p>
 <br>
 <p>
     <%= label_tag(:email, "Your Email:") %>
-<<<<<<< HEAD
-    <%= text_field_tag(:email) %>
-=======
     <%= text_field_tag("advertisersignup[email]") %>
->>>>>>> 3442aeb7322af232ccf0cdac03c16cfc50bfa3a0
 </p>
 <br>
 <p>
     <%= label_tag(:organization, "Organization:") %>
-<<<<<<< HEAD
-    <%= text_field_tag(:organization) %>
-=======
     <%= text_field_tag("advertisersignup[org]") %>
->>>>>>> 3442aeb7322af232ccf0cdac03c16cfc50bfa3a0
 </p>
 <br>
 <p>
     <%= label_tag(:message, "Message:") %>
-<<<<<<< HEAD
-    <%= text_area_tag :message %>
-=======
     <%= text_area_tag "advertisersignup[message]" %>
->>>>>>> 3442aeb7322af232ccf0cdac03c16cfc50bfa3a0
 </p>
 <br>
     <button style='margin-left:18em' type="submit" class="btn primary large" id="advertisersignup_submit" name="commit">Submit!</button>

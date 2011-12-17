@@ -1,9 +1,5 @@
 class AdvertisersignupsController < ApplicationController
-<<<<<<< HEAD
-   @@toolbar_hash = {:home=>'',:demo=>'', :faq=>'', :overview=>'', :partners=>'', :apply=>''}
-=======
    @@toolbar_hash = {:home=>'',:demo=>'', :faq=>'', :overview=>'', :partners=>'', :apply=>'', :success=>''}
->>>>>>> 3442aeb7322af232ccf0cdac03c16cfc50bfa3a0
   
   def home
     @toolbar = @@toolbar_hash.clone
@@ -33,11 +29,6 @@ class AdvertisersignupsController < ApplicationController
   def apply
     @toolbar = @@toolbar_hash.clone
     @toolbar[:apply]='active'
-<<<<<<< HEAD
-    @castersignup = Castersignup.new
-  end
-
-=======
     @advertisersignup = AdvertiserSignUp.new 
   end
 
@@ -59,5 +50,4 @@ class AdvertisersignupsController < ApplicationController
     @toolbar = @@toolbar_hash.clone
     @toolbar[:success]='active'
   end
->>>>>>> 3442aeb7322af232ccf0cdac03c16cfc50bfa3a0
 end
