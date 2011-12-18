@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   layout 'application', :except => :holder
-   @@toolbar_hash = {:about => '', :promotion => '', :home => '', :caster => '', :channel => '', :partner=>'', :leader=>'', :contact=>'', :about=>''}
+  @@toolbar_hash = {:about => '', :promotion => '', :home => '', :caster => '', :channel => '', :partner=>'', :leader=>'', :contact=>'', :about=>''}
 
   def home
    @toolbar = @@toolbar_hash.clone
@@ -65,12 +65,11 @@ class PagesController < ApplicationController
 
   end
 
-   def index
+  def index
     @betasignups = Betasignups.all
-
-   @toolbar = @@toolbar_hash.clone
-   @toolbar[:index] = 'active'
-   end
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:index] = 'active'
+  end
 
   def success
    @toolbar = @@toolbar_hash.clone
