@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.10'
 gem 'will_paginate', '~> 3.0.0'
 gem "paperclip", "~> 2.4"
-
+gem "tlsmail"
 group :development do
   gem 'rspec-rails' , '2.0.1'
   gem 'faker', '~>1.0.0'

@@ -37,6 +37,7 @@ AmericanLang220::Application.routes.draw do
   match "/contacts", :to => "robotindex#contacts"
   match "/contact", :to => "robotindex#contacts"
   match "/about", :to => "robotindex#about"
+  match "/send", :to => "robotindex#send_mail"
   match "/leader", :to => "pages#leader"
   match "/promotion/partners", :to => "advertisersignups#partner" 
 

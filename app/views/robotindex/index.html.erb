@@ -1,46 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>Home | Ingidio</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<link href="robot_css/style.css" rel="stylesheet" type="text/css" />
-<script src="robot_js/maxheight.js" type="text/javascript"></script>
-<script src="robot_js/jquery-1.4.2.min.js" type="text/javascript"></script>
-<script src="robot_js/cufon-yui.js" type="text/javascript"></script>
-<script src="robot_js/cufon-replace.js" type="text/javascript"></script>
-<script src="robot_js/Myriad_Pro_300.font.js" type="text/javascript"></script>
-<script src="robot_js/Myriad_Pro_400.font.js" type="text/javascript"></script>
-</head>
-
-<body id="page1" onload="new ElementMaxHeight();">
-<!-- header -->
-	<div id="header">
-		<div class="bg">
-			<div class="container">
-				<div class="row-1">
-					<div class="wrapper">
-						<div class="fleft"><a href="/"><img src="http://i1143.photobucket.com/albums/n639/indigio/ingidiologo.png" alt="" /></a></div>
-						<ul class="top-links">
-							<!--<li class="first"><a href="/" class="home-current"></a></li>
-							<li><a href="contacts.html" class="mail">Contact Us</a></li>
-							<li><a href="contacts.html" class="mail">Contact Us</a></li>
-							<li class="last"><a href="sitemap.html" class="sitemap"></a></li>-->
-						</ul>
-					</div>
-				</div>
-				<div class="row-2">
-					<!-- .nav -->
-					<ul class="nav">
-						<li><a href="/" class="current">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<!--<li><a href="services.html">Support</a></li>
-						<li><a href="support.html">Support</a></li>-->
-						<li><a href="contacts.html">Contacts</a></li>		
-					</ul>
-					<!-- /.nav -->
-				</div>
-				<div class="row-3">
+	<%= render "header" %>			
+	<div class="row-3">
 					<!--<img src="robot_images/slogan.jpg" alt="" class="slogan" /><br>-->
 					<h4>We reward the <font color="#9EDDFC">Defining Moments</font> in games.</h4><br>
 					<h4>Be proud of your gaming achievements. <br> 
@@ -107,22 +66,18 @@
 								Fast deployment (seconds) with realtime campaign management and anlytics. Our players will love your brand!
 							</li><br>
 						</ul>
-							Interested? <a href="mailto:ingidio.tv@gmail.com">Contact us</a>. We'd love to hear from you!
+							Interested? <a href="mailto:ingidio.tv@gmail.com">Contact us</a>. We'd love to hear from you!<br>
+<br>
+<img src="http://i1143.photobucket.com/albums/n639/indigio/carlsjr.png" alt="" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<img src="http://i1143.photobucket.com/albums/n639/indigio/popchips.png" alt="" />&nbsp;&nbsp;&nbsp;&nbsp;
+
+<img src="http://i1143.photobucket.com/albums/n639/indigio/1800flowers.png" alt="" />
+<!--<img src="http://i1143.photobucket.com/albums/n639/indigio/drpepper.png" alt="" />-->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<!-- footer -->
-	<div id="footer">
-		<div class="bg">
-			<div class="container">
-				<div class="indent">
-					Copyright 2011 - Ingidio, All Rights Reserved<br />
-				</div>	
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript"> Cufon.now(); </script>
-</body>
-</html>
+<%= render "footer" %>
