@@ -67,7 +67,10 @@ AmericanLang220::Application.routes.draw do
 
   #root :to => "pages#holder"
   root :to => "robotindex#index"
-
+AmericanLang220::Application.routes.draw do
+  #Last route in routes.rb
+  match '*a', :to => 'errors#routing'
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
