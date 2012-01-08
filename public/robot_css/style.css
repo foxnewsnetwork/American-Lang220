@@ -18,8 +18,10 @@ table, table td {padding:0;border:none;border-collapse:collapse}
 #header {height:430px;overflow:hidden;background:url(/robot_images/header-tail.gif) 0 0 repeat-x;min-width:920px}
 #header .bg {background:url(/robot_images/header-bg.jpg) no-repeat 50% 0;height:430px}
 #content {background:url(/robot_images/content-bg.gif) 0 0 repeat-x}
-#content .aside {float:left;width:287px;background:url(/robot_images/sidebar-extra-bg.jpg) no-repeat 0 100% #f0f0f0}
-#content .mainContent {float:left;width:633px}
+/*#content .aside {float:left;width:287px;background:url(/robot_images/sidebar-extra-bg.jpg) no-repeat 0 100% #f0f0f0}
+#content .mainContent {float:left;width:633px}*/
+#content .aside {float:left;width:50%;background:url(/robot_images/sidebar-extra-bg.jpg) no-repeat 0 100% #f0f0f0}
+#content .mainContent {float:right;width:50%}
 #footer {height:125px;background:url(/robot_images/footer-tail.gif) 0 0 repeat-x}
 #footer .bg {height:125px;background:url(/robot_images/footer-bg.jpg) no-repeat 50% 0}
 /* tailings */
@@ -100,7 +102,7 @@ h6 {}
 /* content */
 #content {}
 #content .aside .indent {padding:42px 35px 280px 40px;background:url(/robot_images/sidebar-bg.gif) 0 0 repeat-x}
-#content .mainContent .indent {padding:42px 35px 40px 40px}
+#content .mainContent .indent { padding:42px 35px 40px 40px}
 #content .section {padding-bottom:37px}
 .inner_copy, .inner_copy a {border:0;float:right;background:#f00;color:#f00;width:35%;line-height:10px;font-size:10px;margin:-50% 0 0 0;overflow:hidden;padding:0}
 dl.news dt {font-size:12px;font-weight:bold;margin-bottom:5px}
