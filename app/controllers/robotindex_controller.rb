@@ -4,11 +4,13 @@ class RobotindexController < ApplicationController
   layout 'application', :except => [:index, :about, :devsignup, :contacts]
   
   def index
+    @title = "Home"
     @toolbar = @@toolbar_hash.clone
     @toolbar[:index]='current'
   end
 
   def about
+    @title = "About"
     @toolbar = @@toolbar_hash.clone
     @toolbar[:about]='current'
   end
@@ -16,6 +18,7 @@ class RobotindexController < ApplicationController
   def devsignup
   end
   def contacts
+    @title = "Contacts"
     @toolbar = @@toolbar_hash.clone
     @toolbar[:contacts]='current'
   end
