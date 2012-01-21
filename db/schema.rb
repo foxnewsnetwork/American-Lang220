@@ -14,10 +14,8 @@
 ActiveRecord::Schema.define(:version => 20111207095350) do
 
   create_table "ads", :force => true do |t|
-    t.integer  "ad_id"
-    t.integer  "views"
-    t.integer  "duration"
-    t.integer  "clicks"
+    t.string   "name"
+    t.integer  "corporation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -71,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20111207095350) do
   end
 
   create_table "corporations", :force => true do |t|
-    t.integer  "corporation_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                                 :default => "", :null => false
@@ -85,6 +83,8 @@ ActiveRecord::Schema.define(:version => 20111207095350) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
   end
+
+  add_index "corporations", ["name"], :name => "index_corporations_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
