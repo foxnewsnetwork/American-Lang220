@@ -45,6 +45,11 @@ GEM
       activesupport
     faker (1.0.1)
       i18n (~> 0.4)
+    heroku (2.18.1)
+      launchy (>= 0.3.2)
+      rest-client (~> 1.6.1)
+      rubyzip
+      term-ansicolor (~> 1.0.5)
     i18n (0.5.0)
     json (1.6.3)
     launchy (2.0.5)
@@ -66,6 +71,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.2.4)
     rack-mount (0.6.14)
@@ -89,6 +95,8 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.0.1)
       rspec-core (~> 2.0.1)
       rspec-expectations (~> 2.0.1)
@@ -101,6 +109,8 @@ GEM
       rspec-expectations (~> 2.0.1)
     rspec-rails (2.0.1)
       rspec (~> 2.0.0)
+    rubyzip (0.9.5)
+    term-ansicolor (1.0.7)
     thor (0.14.6)
     tlsmail (0.0.1)
     treetop (1.4.10)
@@ -123,10 +133,12 @@ DEPENDENCIES
   devise
   factory_girl (~> 2.1.0)
   faker (~> 1.0.0)
+  heroku
   letter_opener
   mysql2 (~> 0.2.11)
   nifty-generators
   paperclip (~> 2.4)
+  pg
   rails (= 3.0.10)
   rspec (= 2.0.1)
   rspec-rails (= 2.0.1)
