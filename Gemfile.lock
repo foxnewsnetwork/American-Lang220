@@ -140,6 +140,7 @@ DEPENDENCIES
   faker (~> 1.0.0)
   heroku
   letter_opener
+  mail
   mysql2 (~> 0.2.11)
   nifty-generators
   paperclip (~> 2.4)

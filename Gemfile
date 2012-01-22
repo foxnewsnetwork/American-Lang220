@@ -7,6 +7,7 @@ gem "tlsmail"
 gem "heroku"
 gem "thin"
 gem "rack", "1.2.4"
+gem "mail"
 
 #gem "pg"
 group :development do

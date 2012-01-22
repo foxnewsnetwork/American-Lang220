@@ -18,28 +18,44 @@ AmericanLang220::Application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   # method is either :smtp, :test, :sendmail, :letter_opener
-  config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :smtp
+
+# these options are only needed if you choose smtp delivery
+#require 'tlsmail'
+require 'tlsmail'
+Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+
+config.action_mailer.smtp_settings = {
+  :address        => 'smtp.gmail.com',
+  :port           => 587,
+  :domain         => 'localhost.localdomain',
+  :user_name      => 'ingidio.tv@gmail.com',
+  :password       => 'wtfisthisbullshit11',
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
+config.default_url_options = "localhost:3000"
+#Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-  require 'tlsmail'
-Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+#Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
 
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.smtp_settings = {
-  :enable_starttls_auto => true,
-  :address            => 'smtp.gmail.com',
-  :port               => 587,
-  :tls                  => true,
-  :domain             => 'gmail.com', #you can also use google.com
-  :authentication     => :plain,
-  :user_name          => 'ingidio.tv@gmail.com',
-  :password           => 'wtfisthisbullshit11'
-}
+#ActionMailer::Base.delivery_method = :smtp
+#ActionMailer::Base.perform_deliveries = true
+#ActionMailer::Base.raise_delivery_errors = true
+#ActionMailer::Base.smtp_settings = {
+#  :enable_starttls_auto => true,
+#  :address            => 'smtp.gmail.com',
+#  :port               => 587,
+#  :tls                  => true,
+#  :domain             => 'gmail.com', #you can also use google.com
+#  :authentication     => :plain,
+#  :user_name          => 'ingidio.tv@gmail.com',
+#  :password           => 'wtfisthisbullshit11'
+#}
 end
 
