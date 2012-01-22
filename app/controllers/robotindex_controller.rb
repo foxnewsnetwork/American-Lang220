@@ -30,8 +30,10 @@ class RobotindexController < ApplicationController
       @title = "Game Sign Up"
       @toolbar = @@toolbar_hash.clone
       @toolbar[:gamesignup]='current'
+
       GameMailer.registration_confirmation(@gamesignup).deliver
-      flash[:success] = "Sign Up Success! Thank you, #{params[:game][:contact_name].split(' ')[0]}! We will contact you within 24-48 hours."
+
+      flash[:success] = "Success! Thank you, #{params[:game][:contact_name].split(' ')[0]}! We will contact you within 24-48 hours."
       redirect_to :action=> "gamesignup"
     else
       @title = "Game Sign Up"
