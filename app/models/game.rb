@@ -11,7 +11,7 @@ class Game < ActiveRecord::Base
           :format     => { :with => email_regex}
           #:uniqueness => { :case_sensitive => false}
 
-  validates :url, :presence   => true
+  #validates :url, :presence   => true
 
   validates :user_amount, :presence   => true
 
