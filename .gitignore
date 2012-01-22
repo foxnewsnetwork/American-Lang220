@@ -8,4 +8,5 @@ config/database.yml
 .idea/
 *.swp
 */*.swp
+*.swo
 .idea/
