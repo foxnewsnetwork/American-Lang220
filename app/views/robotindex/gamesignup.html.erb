@@ -16,7 +16,11 @@
 							<h2>Sign Up Form</h2>
 <div id="error_box">
 <% flash.each do |key, msg| %>
-    <%= content_tag :div, msg, :class => [key, "message"], :id => "error" %>
+  <% if "#{key}" == 'success' %>
+    <%= content_tag :div, msg, :class => [key, "message"], :id => "notice" %> 
+  <% else %>
+    <%= content_tag :div, msg, :class => [key, "message"], :id => "error" %> 
+  <% end %>
 <% end %>
 </div>
 

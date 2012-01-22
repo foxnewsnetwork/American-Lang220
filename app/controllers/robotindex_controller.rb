@@ -31,8 +31,9 @@ class RobotindexController < ApplicationController
       @toolbar = @@toolbar_hash.clone
       @toolbar[:gamesignup]='current'
 
-      flash[:success] = "Sign Up Success!"
-      render :action=> "gamesignup"
+      
+      flash[:success] = "Sign Up Success! We will contact you within 24-48 hours. Thank you!"
+      redirect_to :action=> "gamesignup"
     else
       @title = "Game Sign Up"
       @toolbar = @@toolbar_hash.clone
@@ -41,7 +42,7 @@ class RobotindexController < ApplicationController
       @gamesignup.errors.each do |key, msg|
         flash[:"#{key}"] = "#{key}" + ' ' + msg
       end
-      flash[:error] = "Sign Up Failed!"
+      flash[:error] = "Oops, something went wrong. Please try again!"
       render 'gamesignup'
     end
 

@@ -11,4 +11,12 @@ class Game < ActiveRecord::Base
   validates :email, :presence   => true,
           :format     => { :with => email_regex}, 
           :uniqueness => { :case_sensitive => false}
+
+  validates :url, :presence   => true
+
+  validates :user_amount, :presence   => true
+
+  validates :game_name, :presence   => true
+  
+  validates_numericality_of :user_amount, :only_integer => true
 end
