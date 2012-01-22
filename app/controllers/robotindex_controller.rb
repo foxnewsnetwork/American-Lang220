@@ -30,9 +30,7 @@ class RobotindexController < ApplicationController
       @title = "Game Sign Up"
       @toolbar = @@toolbar_hash.clone
       @toolbar[:gamesignup]='current'
-
-      
-      flash[:success] = "Sign Up Success! We will contact you within 24-48 hours. Thank you!"
+      flash[:success] = "Sign Up Success! Thank you, #{params[:game][:contact_name].split(' ')[0]}! We will contact you within 24-48 hours."
       redirect_to :action=> "gamesignup"
     else
       @title = "Game Sign Up"
@@ -40,10 +38,10 @@ class RobotindexController < ApplicationController
       @toolbar[:gamesignup]='current'
 
       @gamesignup.errors.each do |key, msg|
-        flash[:"#{key}"] = "#{key}" + ' ' + msg
+        flash.now[:"#{key}"] = capitalize_and_merge("#{key}".split("_")) + ' ' + msg
       end
-      flash[:error] = "Oops, something went wrong. Please try again!"
-      render 'gamesignup'
+      flash.now[:error] = "Oops, something went wrong. Please try again!"
+      render :action => 'gamesignup'
     end
 
   end
@@ -60,5 +58,13 @@ class RobotindexController < ApplicationController
   def send_mail
     UserMailer.welcome_email.deliver
     redirect_to :back 
+  end
+
+  def capitalize_and_merge(list)
+    r = []
+    list.each do |x|
+      r << x.capitalize
+    end   
+    return r.join(' ')
   end
 end
