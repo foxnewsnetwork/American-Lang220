@@ -26,9 +26,10 @@ AmericanLang220::Application.routes.draw do
   end
   resources :betasignups
 
-  get "pages/home"
-  get "pages/about"
-  get "pages/channels"
+  resources :robotindex
+
+  match "/signup/", :to=> "robotindex#gamesignup"
+  match "/signup/success", :to=> "robotindex#success"
 
   match "create", :to => "pages#create"
   match "/success", :to => "pages#success"
@@ -53,10 +54,8 @@ AmericanLang220::Application.routes.draw do
   match "/advertiser/signup/apply", :to=>"advertisersignups#apply"
   match "/advertiser/signup/demo", :to=>"advertisersignups#demo"
   match "/advertiser/signup/faq", :to=>"advertisersignups#faq"
-#  match "/advertiser/signup/partners", :to=>"advertisersignups#partner"
   match "/advertiser/signup/create", :to=>"advertisersignups#create"
   match "/advertiser/signup/success", :to=>"advertisersignups#success"
-
 
   match "/advertiser/signup/overview", :to=>"advertisersignups#overview"
   match "/advertiser/signup/apply", :to=>"advertisersignups#apply"
@@ -65,8 +64,8 @@ AmericanLang220::Application.routes.draw do
   match "/advertiser/signup/partners", :to=>"advertisersignups#partner"
   match "/advertiser/signup/create", :to=>"advertisersignups#create"
 
-  #root :to => "pages#holder"
   root :to => "robotindex#index"
+
 AmericanLang220::Application.routes.draw do
   #Last route in routes.rb
   match '*a', :to => 'errors#routing'

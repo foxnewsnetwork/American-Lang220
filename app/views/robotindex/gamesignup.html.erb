@@ -1,0 +1,58 @@
+<%= render "header" %>				
+<div class="row-3">
+					<h4>Join Our Beta Program! </h4><br>
+<h4>We are the Gamertisers.</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- content -->
+	<div id="content"><div class="inner_copy"><div class="inner_copy"></div></div>
+		<div class="container">
+			<div class="wrapper">
+				<div class="mainContent maxheight" style="width: 100%">
+					<div class="indent">
+						<div class="section">
+							<h2>Sign Up Form</h2>
+<div id="error_box">
+<% flash.each do |key, msg| %>
+    <%= content_tag :div, msg, :class => [key, "message"], :id => "error" %>
+<% end %>
+</div>
+
+<script>
+$("#error_close").click(function () {$("#error_box").fadeOut("slow");});
+</script>
+
+<%= form_for @gamesignup, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f|%> 
+  <p>                           
+  <h4 style="color:#000"> Email </h4>
+  <%= f.text_field :email %>
+  </p>
+  <p>
+  <h4 style="color:#000"> Contact Name </h4>
+  <%= f.text_field :contact_name %>                                        
+  </p>
+
+  <p>
+  <h4 style="color:#000"> Game Name </h4>
+  <%= f.text_field :game_name %>
+</p>
+<p>
+  <h4 style="color:#000"> User Amount </h4>
+  <%= f.text_field :user_amount %>
+</p>
+<p>
+  <h4 style="color:#000"> URL </h4>
+  <%= f.text_field :url %>
+</p>
+<button type="submit" class="btn primary large" id="gamesignup_submit" name="commit"><h4>Sign Up</h4></button>
+<% end %>
+
+			</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<%= render "footer" %>

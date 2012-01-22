@@ -1,7 +1,7 @@
 class RobotindexController < ApplicationController
 
-   @@toolbar_hash = {:index=>'',:about=>'', :contacts=>'', :overview=>'', :partners=>'', :apply=>'', :success=>''}
-  layout 'application', :except => [:index, :about, :devsignup, :contacts]
+   @@toolbar_hash = {:index=>'',:about=>'', :contacts=>'', :overview=>'', :partners=>'', :apply=>'', :success=>'', :gamesignup=>''}
+  layout 'application', :except => [:index, :about, :contacts, :gamesignup, :success, :create]
   
   def index
     @title = "Home"
@@ -15,7 +15,40 @@ class RobotindexController < ApplicationController
     @toolbar[:about]='current'
   end
 
-  def devsignup
+  def gamesignup
+    @title = "Game Sign Up"
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:gamesignup]='current'
+	
+    @gamesignup = Game.new
+  end
+
+  def create
+    @gamesignup = Game.new(params[:game])
+
+    if @gamesignup.save
+      @title = "Game Sign Up"
+      @toolbar = @@toolbar_hash.clone
+      @toolbar[:gamesignup]='current'
+
+      flash[:success] = "Sign Up Success!"
+      render :action=> "gamesignup"
+    else
+      @title = "Game Sign Up"
+      @toolbar = @@toolbar_hash.clone
+      @toolbar[:gamesignup]='current'
+
+      @gamesignup.errors.each do |key, msg|
+        flash[:"#{key}"] = "#{key}" + ' ' + msg
+      end
+      flash[:error] = "Sign Up Failed!"
+      render 'gamesignup'
+    end
+
+  end
+
+  def success
+
   end
   def contacts
     @title = "Contacts"
