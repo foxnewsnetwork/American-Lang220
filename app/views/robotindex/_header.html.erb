@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/robot_css/global.css">
 <style type="text/css">
 .slideshow { height: 200px; width: 200px; margin: auto }
-.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #fff; -moz-border-radius: 15px; border-radius: 15px; box-shadow: 2px 2px 2px #888;}
 </style>	
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <!--<script src="/robot_js/jquery-1.4.2.min.js" type="text/javascript"></script>-->
@@ -25,9 +25,11 @@
 <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('.slideshow').cycle({
-		fx: 'scrollRight' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	$('.slideshow').cycle({
+		fx:    'shuffle', 
+		delay: -4000 
 	});
+
 });
 </script>
 
