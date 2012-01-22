@@ -8,8 +8,8 @@
 
 <link rel="stylesheet" href="/robot_css/global.css">
 <style type="text/css">
-.slideshow { height: 200px; width: 200px; margin: auto }
-.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+.slideshow { height: 232px; width: 232px; margin: auto }
+.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #fff; }
 </style>	
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <!--<script src="/robot_js/jquery-1.4.2.min.js" type="text/javascript"></script>-->
@@ -26,7 +26,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
     $('.slideshow').cycle({
-		fx: 'scrollRight' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		fx: 'scrolldown' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 	});
 });
 </script>
