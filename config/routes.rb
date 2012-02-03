@@ -28,6 +28,7 @@ AmericanLang220::Application.routes.draw do
 
   resources :robotindex
 
+  match "/developers/", :to=> "robotindex#developers"
   match "/signup/", :to=> "robotindex#gamesignup"
   match "/signup/success", :to=> "robotindex#success"
 

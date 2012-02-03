@@ -1,12 +1,18 @@
 class RobotindexController < ApplicationController
 
-   @@toolbar_hash = {:index=>'',:about=>'', :contacts=>'', :overview=>'', :partners=>'', :apply=>'', :success=>'', :gamesignup=>''}
-  layout 'application', :except => [:index, :about, :contacts, :gamesignup, :success, :create]
+   @@toolbar_hash = {:index=>'',:about=>'', :contacts=>'', :overview=>'', :partners=>'', :apply=>'', :success=>'', :gamesignup=>'', :developers=>''}
+  layout 'application', :except => [:index, :about, :contacts, :gamesignup, :success, :create, :developers]
   
   def index
     @title = "Home"
     @toolbar = @@toolbar_hash.clone
     @toolbar[:index]='current'
+  end
+
+  def developers
+    @title = "Developers"
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:developers]='current'
   end
 
   def about
