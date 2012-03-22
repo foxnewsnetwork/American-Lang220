@@ -76,6 +76,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.2.4)
     rack-mount (0.6.14)
@@ -148,6 +149,7 @@ DEPENDENCIES
   mysql2 (~> 0.2.11)
   nifty-generators
   paperclip (~> 2.4)
+  pg
   rack (= 1.2.4)
   rails (= 3.0.10)
   rspec (= 2.0.1)

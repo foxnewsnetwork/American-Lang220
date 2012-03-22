@@ -9,8 +9,7 @@ gem "thin"
 gem "rack", "1.2.4"
 gem "mail"
 gem 'jquery-rails', '>= 1.0.12'
-
-#gem "pg"
+gem "pg"
 group :development do
   gem 'rspec-rails' , '2.0.1'
   gem 'faker', '~>1.0.0'
