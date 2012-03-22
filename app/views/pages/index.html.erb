@@ -1,4 +1,4 @@
-<div id ="signups_list">
+<!--<div id ="signups_list">
 <table>
 <tr>
   <th>User Name</th>
@@ -12,4 +12,74 @@
   <% end %>
 
 </table>
-    </div>
+    </div>-->
+
+<!DOCTYPE html>
+
+		<%= render 'custom_header' %>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="background-image:url('images/mall.gif'); background-size:50%;background-repeat:no-repeat;background-position:right;filter:alpha(opacity=100);">
+        <font color="#0065d0"><h1>Sell Real Products in Games</h1></font>
+				<p></p>
+        <p>
+				Why settle for virtual items when you can sell real goods
+				</p>
+        <p>
+				InGidio enables real shopping in your games
+				</p>
+        <p>
+			 	Just copy and paste some code and we will take of the rest for you
+				</p>
+				<p>
+				Yes, it's that simple.
+				</p>
+
+
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span6">
+          <h2>Game</h2>
+<p>
+Add the following code at any point in your html5 game's game flow.
+</p>
+<pre class="prettyprint linenums lang-js">
+javascript:( function(){
+	var idg=document.createElement("script");
+	idg.type="text/javascript"; idg.async=true;
+	idg.src="http://crunchymall.com/javascripts/browser.js";
+	var s=document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(idg, s);
+})();
+</pre>
+<p>
+It's that simple
+</p>
+          <p><a class="btn" href="#">Documentation &raquo;</a></p>
+
+        </div>
+        <div class="span6">
+          <h2>Shop Everywhere</h2>
+					<p>Or if you just want to shop everywhere, drag and drop the button below to your bookmark toolbar</p>
+<br>
+<table style="width:100%">
+<tr>
+<td style="text-align:center">
+<a class="btn btn-warning btn-large" style="width:30%" href='javascript:(function(){var%20idg=document.createElement("script");idg.type="text/javascript";idg.async=true;idg.src="http://crunchymall.com/javascripts/browser.js";var%20s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(idg,%20s);})();'>
+InGidio Shop</a>
+</td>
+</tr>
+</table>
+<br>
+<p>
+Now just go surfing like you normally do and open the shop to buy stuff most relevant to you.
+</p>
+       </div>
+      </div>
+
+    </div> <!-- /container -->
+<%= render 'custom_footer' %>
+

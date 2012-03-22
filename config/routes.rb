@@ -36,9 +36,9 @@ AmericanLang220::Application.routes.draw do
   match "/success", :to => "pages#success"
   match "/promotion", :to => "advertisersignups#overview"
   match "/channel", :to => "pages#channel"
-  match "/contacts", :to => "robotindex#contacts"
-  match "/contact", :to => "robotindex#contacts"
-  match "/about", :to => "robotindex#about"
+  match "/contacts", :to => "pages#contact"
+  match "/contact", :to => "pages#contact"
+  match "/about", :to => "pages#about"
   match "/send", :to => "robotindex#send_mail"
   match "/leader", :to => "pages#leader"
   match "/promotion/partners", :to => "advertisersignups#partner" 
@@ -65,7 +65,8 @@ AmericanLang220::Application.routes.draw do
   match "/advertiser/signup/partners", :to=>"advertisersignups#partner"
   match "/advertiser/signup/create", :to=>"advertisersignups#create"
 
-  root :to => "robotindex#index"
+  #root :to => "robotindex#index"
+  root :to => "pages#index"
 
 AmericanLang220::Application.routes.draw do
   #Last route in routes.rb

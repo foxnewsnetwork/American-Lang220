@@ -53,6 +53,9 @@ GEM
       rubyzip
       term-ansicolor (~> 1.0.5)
     i18n (0.5.0)
+    jquery-rails (1.0.19)
+      railties (~> 3.0)
+      thor (~> 0.14)
     json (1.6.5)
     launchy (2.0.5)
       addressable (~> 2.2.6)
@@ -139,6 +142,7 @@ DEPENDENCIES
   factory_girl (~> 2.1.0)
   faker (~> 1.0.0)
   heroku
+  jquery-rails (>= 1.0.12)
   letter_opener
   mail
   mysql2 (~> 0.2.11)

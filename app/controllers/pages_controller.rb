@@ -69,6 +69,9 @@ class PagesController < ApplicationController
     @betasignups = Betasignups.all
     @toolbar = @@toolbar_hash.clone
     @toolbar[:index] = 'active'
+		@home = 'active'
+		@location = 'Home'
+		render :layout=>false
   end
 
   def success
@@ -83,13 +86,18 @@ class PagesController < ApplicationController
 
 
   def contact 
-   @toolbar = @@toolbar_hash.clone
-   @toolbar[:contact] = 'active'
+		@contact = 'active'
+		@location = 'Contact'
+		 @toolbar = @@toolbar_hash.clone
+		 @toolbar[:contact] = 'active'
   end
 
   def about
+		@about = 'active'
+		@location = 'About'
    @toolbar = @@toolbar_hash.clone
    @toolbar[:about] = 'active'
+		render :layout=>false
   end
 
 
