@@ -47,7 +47,7 @@ AmericanLang220::Application.routes.draw do
   match "create", :to => "pages#create"
   match "/success", :to => "pages#success"
 
-  #match "/docs", :to => "pages#docs"
+  match "/docs", :to => "pages#docs"
 
   match "/promotion", :to => "advertisersignups#overview"
   match "/channel", :to => "pages#channel"

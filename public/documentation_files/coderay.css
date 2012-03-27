@@ -1,0 +1,4 @@
+.CodeRay .dl, .CodeRay .k { color: #219161; } /* string */
+.CodeRay .co, .CodeRay .kw, .CodeRay .ta { color: #19469D; } /* kwd */
+.CodeRay .c               { color: #9b9bb9; }
+.CodeRay .sy              { color: #954121; }

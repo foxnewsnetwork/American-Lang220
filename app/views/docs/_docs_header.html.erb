@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="documentation_files/docs.css" type="text/css" media="screen" title="API Docs" charset="utf-8">
+    <link rel="stylesheet" href="documentation_files/coderay.css" type="text/css" media="screen" title="API Docs" charset="utf-8">
+  <script src="documentation_files/mixpanel.js" async="" type="text/javascript"></script><script src="documentation_files/ga.js" async="" type="text/javascript"></script><script src="documentation_files/jquery.js"></script>
+  <title>Ingidio API Documentation</title>
+
+<!-- Mixpanel -->
+<script type="text/javascript">
+  (function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("http:"===d.location.protocol?"http:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+  mixpanel.init("4b8fbd59726a9537df293aded65dac01");
+  mixpanel.set_config({
+    track_pageview: false
+  });
+</script>
+
+
+  <script type="text/javascript">
+    mixpanel.name_tag('cnnnetwork@gmail.com');
+  </script>
+
+</head>
+<body>
+	
+    <div id="page-wrapper">
+      <div id="flybar">
+  <!--<a href="#top">
+	<img id="nav-logo" src="documentation_files/logo_bare.png" alt="Ingidio">
+	</a>-->
+
+  <div class="flybar-nav">
+      <!--<h2 id="toc-menu-button" class="flybar-button">Navigation</h2>-->
+      <div id="toc-menu" class="flybar-menu">
+          <div class="toc-column1">
+              <div class="toc-section">
+                  <h3><a href="http://manage.ingidio.com/">Dashboard</a></h3>
+                  <h3><a href="http://ingidio.com/help/contact">Help &amp; Support</a></h3>
+                  <h3><a href="http://ingidio.com/docs">Documentation Home</a></h3>
+              </div>
+
+              <div class="toc-section">
+                  <h3>Additional Resources</h3>
+                  <ul>
+                      <li><a href="http://ingidio.com/docs/ingidio.js">Ingidio.js Guide</a></li>
+                      <li><a href="http://ingidio.com/docs/subscriptions">Recurring Guide</a></li>
+                      <li><a href="http://ingidio.com/docs/webhooks">Webhooks Guide</a></li>
+                      <li><a href="http://ingidio.com/docs/testing">Testing</a></li>
+                      <li><a href="http://ingidio.com/docs/examples">Examples</a></li>
+                      <li><a href="http://ingidio.com/docs/libraries">API Libraries</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="toc-column2">
+
+              <div class="toc-section">
+                  <h3>Full API Docs</h3>
+                  <h4>Charges</h4>
+                  <ul>
+                      <li><a href="#charge_object">The charge object</a></li>
+                      <li><a href="#create_charge">Create a new charge</a></li>
+                      <li><a href="#retrieve_charge">Retrieve an existing charge</a></li>
+                      <li><a href="#refund_charge">Refund a charge</a></li>
+                      <li><a href="#list_charges">List all charges</a></li>
+                  </ul>
+              </div>
+              <div class="toc-section">
+                  <h4>Customers</h4>
+                  <ul>
+                      <li><a href="#customer_object">The customer object</a></li>
+                      <li><a href="#create_customer">Create a new customer</a></li>
+                      <li><a href="#retrieve_customer">Retrieve an existing customer</a></li>
+                      <li><a href="#update_customer">Update a customer</a></li>
+                      <li><a href="#delete_customer">Delete a customer</a></li>
+                      <li><a href="#list_customers">List all customers</a></li>
+                  </ul>
+
+              </div>
+
+              <div class="toc-section">
+                  <h4>Tokens</h4>
+                  <ul>
+                      <li><a href="#token_object">The token object</a></li>
+                      <li><a href="#create_token">Create a card token</a></li>
+                      <li><a href="#retrieve_token">Retrieve an existing card token</a></li>
+                  </ul>
+
+              </div>
+
+          </div>
+
+          <div class="toc-column3">
+              <div class="toc-section toc-section-column2">
+                  <h3>&nbsp;</h3>
+                  <h4>Subscriptions</h4>
+                  <ul>
+                      <li><a href="#subscription_object">The subscription object</a></li>
+                      <li><a href="#update_subscription">Update a customer's subscription</a></li>
+                      <li><a href="#cancel_subscription">Cancel a customer's subscription</a></li>
+                  </ul>
+
+              </div>
+
+              <div class="toc-section toc-section-column2">
+                  <h4>Plans</h4>
+                  <ul>
+                      <li><a href="#plan_object">The plan object</a></li>
+                      <li><a href="#create_plan">Create a plan</a></li>
+                      <li><a href="#retrieve_plan">Retrieve a plan</a></li>
+                      <li><a href="#update_plan">Update a plan</a></li>
+                      <li><a href="#delete_plan">Delete a plan</a></li>
+                      <li><a href="#list_plans">List all plans</a></li>
+                  </ul>
+
+              </div>
+              <div class="toc-section toc-section-column2">
+                  <h4>Invoices</h4>
+                  <ul>
+                      <li><a href="#invoice_object">The invoice object</a></li>
+                      <li><a href="#retrieve_invoice">Retrieve an existing invoice</a></li>
+                      <li><a href="#retrieve_customer_invoice">Retrieve an upcoming invoice</a></li>
+                      <li><a href="#list_customer_invoices">List invoices</a></li>
+                  </ul>
+
+              </div>
+
+
+          </div>
+
+          <div class="toc-column4">
+              <div class="toc-section">
+                  <h3>&nbsp;</h3>
+                  <h4>Invoice Items</h4>
+                  <ul>
+                      <li><a href="#invoiceitem_object">The invoice item object</a></li>
+                      <li><a href="#create_invoiceitem">Create a new invoice item</a></li>
+                      <li><a href="#retrieve_invoiceitem">Retrieve an existing invoice item</a></li>
+                      <li><a href="#update_invoiceitem">Update an invoice item</a></li>
+                      <li><a href="#delete_invoiceitem">Delete an invoice item</a></li>
+                      <li><a href="#list_invoiceitems">List all invoice items</a></li>
+                  </ul>
+
+              </div>
+              <div class="toc-section">
+                  <h4>Coupons</h4>
+                  <ul>
+                      <li><a href="#coupon_object">The coupon object</a></li>
+                      <li><a href="#create_coupon">Create a coupon</a></li>
+                      <li><a href="#retrieve_coupon">Retrieve a coupon</a></li>
+                      <li><a href="#delete_coupon">Delete a coupon</a></li>
+                      <li><a href="#list_coupons">List all coupons</a></li>
+                  </ul>
+
+              </div>
+          </div>
+
+          <div class="toc-column5">
+              <div class="toc-section">
+                  <h4>Events</h4>
+                  <ul>
+                      <li><a href="#event_object">The event object</a></li>
+                      <li><a href="#retrieve_event">Retrieve an event</a></li>
+                      <li><a href="#list_events">List all events</a></li>
+                      <li><a href="#event_types">Types of events</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="flybar-language">
+  
+      <a class="flybar-button active" href="http://ingidio.com/docs/curl">
+          Curl
+      </a>
+
+      <a class="flybar-button" href="http://ingidio.com/docs/javascript">
+          JavaScript
+      </a>
+  
+      <a class="flybar-button" href="http://ingidio.com/docs/ruby">
+          Ruby
+      </a>
+  
+      <a class="flybar-button" href="http://ingidio.com/docs/python">
+          Python
+      </a>
+  
+      <a class="flybar-button" href="http://ingidio.com/docs/php">
+          PHP
+      </a>
+  
+      <a class="flybar-button" href="http://ingidio.com/docs/java">
+          Java
+      </a>
+  
+  </div>
+  <script type="text/javascript">
+      (function(){
+          var onclick = function(event) {
+              event = event || window.event;
+              var target = event.target,
+                  scrollTop = $(document.body).scrollTop(),
+                  closestAnchorDistance = Infinity,
+                  closestAnchor;
+
+              for (var i =0, count = document.anchors.length; i < count; i++) {
+                  var a = $(document.anchors[i]);
+                  var delta = Math.abs(scrollTop - a.offset().top)
+                  if (delta < closestAnchorDistance) {
+                      closestAnchorDistance = delta;
+                      closestAnchor = document.anchors[i];
+                  }
+              }
+
+              window.location = target.href + "#" + closestAnchor.id
+              return false;
+          }
+
+          $(".flybar-language .flybar-button").each(function(i, o){
+              $(o).click(onclick);
+          });
+      })();
+  </script>
+</div>
