@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   def partner
   end
 
+
   def about
    @toolbar = @@toolbar_hash.clone
    @toolbar[:about] = 'active'
@@ -98,7 +99,11 @@ class PagesController < ApplicationController
    @toolbar = @@toolbar_hash.clone
    @toolbar[:about] = 'active'
 		render :layout=>false
-  end
+	end
 
-
+  def docs
+		@location = 'Documentation'
+		@docs = 'active'
+		redirect_to docs_curl_path
+	end
 end

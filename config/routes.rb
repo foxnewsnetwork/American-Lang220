@@ -1,5 +1,17 @@
 AmericanLang220::Application.routes.draw do
 
+  get "docs/javascript"
+
+  get "docs/curl"
+
+  get "docs/ruby"
+
+  get "docs/java"
+
+  get "docs/python"
+
+  get "docs/php"
+
   get "communications/transfer"
 	
 	# Full access for corporations
@@ -34,6 +46,9 @@ AmericanLang220::Application.routes.draw do
 
   match "create", :to => "pages#create"
   match "/success", :to => "pages#success"
+
+  match "/docs", :to => "pages#docs"
+
   match "/promotion", :to => "advertisersignups#overview"
   match "/channel", :to => "pages#channel"
   match "/contacts", :to => "pages#contact"
@@ -69,6 +84,18 @@ AmericanLang220::Application.routes.draw do
   root :to => "pages#index"
 
 AmericanLang220::Application.routes.draw do
+  get "docs/javascript"
+
+  get "docs/curl"
+
+  get "docs/ruby"
+
+  get "docs/java"
+
+  get "docs/python"
+
+  get "docs/php"
+
   #Last route in routes.rb
   match '*a', :to => 'errors#routing'
 end

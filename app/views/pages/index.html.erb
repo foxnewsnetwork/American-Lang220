@@ -42,7 +42,7 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="span6">
-          <h2>Game</h2>
+          <h2>Easy Mode</h2>
 <p>
 Add the following code at any point in your html5 game's game flow.
 </p>
@@ -58,12 +58,35 @@ javascript:(function(){
 <p>
 It's that simple
 </p>
-          <p><a class="btn" href="#">Documentation &raquo;</a></p>
 
         </div>
         <div class="span6">
-          <h2>Shop Everywhere</h2>
-					<p>Or if you just want to shop everywhere, drag and drop the button below to your bookmark toolbar</p>
+          <h2>Url Mode</h2>
+					<p>Or you can simply use urls. Copy and paste the below into your console. </p>
+<pre class="prettyprint linenums lang-clj">
+curl http://0.0.0.0:3000/api/v1/product/buy.json  \
+  -d gametoken=12345  \
+  -d usertoken=12345  \
+  -d productid=1 \
+		-d user[email]=hanqijing@gmail.com \
+		-d card[number]=4242424242424242 \
+		-d card[ccv]=123 \
+		-d card[expmon]=02 \
+		-d card[expyear]=2015 \
+  -d ip=1234567890 \
+  -d url=http://google.com
+</pre>
+<p>
+It's that simple
+</p>
+<p><a class="btn" href="#">Documentation &raquo;</a></p>
+       </div>
+      </div>
+
+      <div class="row">
+        <div class="span6">
+          <h2>Demo</h2>
+					<p>For example, if you want to shop everywhere, drag and drop the button below to your bookmark toolbar</p>
 <br>
 <table style="width:100%">
 <tr>
@@ -75,11 +98,12 @@ InGidio Shop</a>
 </table>
 <br>
 <p>
-Now just go surfing like you normally do and open the shop to buy stuff most relevant to you.
+Now just go surfing like you normally do and open the shop to buy stuff most relevant to you. This bookmarlet is built via InGidio's Easy Mode API.
 </p>
+        </div>
+        <div class="span6">
        </div>
       </div>
-
     </div> <!-- /container -->
 <%= render 'custom_footer' %>
 
