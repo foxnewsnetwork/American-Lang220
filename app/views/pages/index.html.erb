@@ -47,13 +47,7 @@
 Add the following code at any point in your html5 game's game flow.
 </p>
 <pre class="prettyprint linenums lang-js">
-javascript:( function(){
-	var idg=document.createElement("script");
-	idg.type="text/javascript"; idg.async=true;
-	idg.src="http://crunchymall.com/javascripts/browser.js";
-	var s=document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(idg, s);
-})();
+javascript:(function(){var idg=document.createElement("script");idg.type="text/javascript";idg.async=true;idg.src="http://crunchymall.com/javascripts/browser.js";var s=document.getElementsByTagName("head")[0];s.appendChild(idg, s);})();
 </pre>
 <p>
 It's that simple
@@ -68,7 +62,7 @@ It's that simple
 <table style="width:100%">
 <tr>
 <td style="text-align:center">
-<a href='javascript:(function(){var%20idg=document.createElement("script");idg.type="text/javascript";idg.async=true;idg.src="http://crunchymall.com/javascripts/browser.js";var%20s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(idg,%20s);})();' class='btn btn-warning btn-large'>
+<a href='javascript:(function(){var idg=document.createElement("script");idg.type="text/javascript";idg.async=true;idg.src="http://crunchymall.com/javascripts/browser.js";var s=document.getElementsByTagName("head")[0];s.appendChild(idg, s);})();' class='btn btn-warning btn-large'>
 InGidio Shop</a>
 </td>
 </tr>
