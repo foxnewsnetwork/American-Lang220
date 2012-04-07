@@ -1,0 +1,141 @@
+<!--<div id ="signups_list">
+<table>
+<tr>
+  <th>User Name</th>
+  <th>Email</th>
+  </tr>
+<% @betasignups.each do |betasignup| %>
+<tr>
+<td><%= betasignup.username %> </td>
+<td><%= betasignup.email %>  </td>
+</tr>
+  <% end %>
+
+</table>
+    </div>-->
+
+<!DOCTYPE html>
+
+		<%= render 'custom_header' %>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="background-image:url('images/mall.gif'); background-size:49%;background-repeat:no-repeat;background-position:right bottom;filter:alpha(opacity=100);">
+        <font color="#0065d0"><h1>Sell Real Products in Games</h1></font>
+				<p></p>
+        <p>
+				Why settle for virtual items when you can sell real goods
+				</p>
+        <p>
+				InGidio enables real shopping in your games
+				</p>
+        <p>
+			 	Just copy and paste some code and we will take of the rest for you
+				</p>
+				<p>
+				Yes, it's that simple.
+				</p>
+
+
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span6">
+          <h2>Easy Mode</h2>
+<p>
+Add the following code at any point in your html5 game's game flow.
+</p>
+<div class="btn-group" data-toggle="buttons-radio">
+	<button class="btn">JavaScript</button>
+</div>
+<pre class="prettyprint linenums lang-js">
+javascript:(function(){
+	var idg=document.createElement("script");
+	idg.type="text/javascript";idg.async=true;
+	idg.src="http://crunchymall.com/javascripts/browser.js";
+	var s=document.getElementsByTagName("head")[0];
+	s.appendChild(idg, s);
+})();
+</pre>
+<p>
+Now you should see a shop. It's that simple.
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+        </div>
+        <div class="span6" style="height:6em">
+          <h2>Url Mode</h2>
+					<p>Or you can simply use urls. Copy and paste the below into your console. </p>
+<div class="btn-group" data-toggle="buttons-radio">
+	<button class="btn active" onclick="$('#purchase').fadeIn(500);$('#user').hide();">Buy an Item</button>
+	<button class="btn" onclick="$('#user').fadeIn(500);$('#purchase').hide();">Create User</button>
+</div>
+    <div class="tab-pane active" id="purchase">
+<pre class="prettyprint linenums lang-clj">
+curl http://gamertiser.com/api/v1/product/buy.json  \
+  -d gametoken=12345  \
+  -d usertoken=12345  \
+  -d productid=1 \
+		-d user[email]=hanqijing@gmail.com \
+		-d card[number]=4242424242424242 \
+		-d card[ccv]=123 \
+		-d card[expmon]=02 \
+		-d card[expyear]=2015 \
+  -d ip=1234567890 \
+  -d url=http://google.com
+</pre>
+		</div>
+    <div class="tab-pane" id="user" style="display:none">
+<pre class="prettyprint linenums lang-clj">
+curl http://gamertiser.com/api/v1/users.json \
+	-d email=test@gmail.com \
+	-d password=test12 \
+	-d name=hansolo \
+	-d game_token=12345 \
+</pre>
+    </div>
+     
+    <script>
+    $(function () {
+    $('.tabs a:last').tab('show')
+    })
+    </script>
+<p>
+Now you should see a success message in json.
+It's that simple
+</p>
+<p>
+<a class="btn" href="docs">Documentation &raquo;</a>
+</p>
+       </div>
+      </div>
+
+      <div class="row">
+        <div class="span6">
+          <h2>Demo</h2>
+					<p>For example, if you want to shop everywhere, drag and drop the button below to your bookmark toolbar</p>
+<br>
+<table style="width:100%">
+<tr>
+<td style="text-align:center">
+<a href='javascript:(function(){var idg=document.createElement("script");idg.type="text/javascript";idg.async=true;idg.src="http://crunchymall.com/javascripts/browser.js";var s=document.getElementsByTagName("head")[0];s.appendChild(idg, s);})();' class='btn btn-warning btn-large'>
+InGidio Shop</a>
+</td>
+</tr>
+</table>
+<br>
+<p>
+Now just go surfing like you normally do and open the shop to buy stuff most relevant to you. This bookmarlet is built via InGidio's Easy Mode API.
+</p>
+        </div>
+        <div class="span6">
+       </div>
+      </div>
+    </div> <!-- /container -->
+<%= render 'custom_footer' %>
+

@@ -7,7 +7,7 @@ end
 
 Factory.define :corporation do |corp|
 	corp.name "Nike Faggots"
-	corp.email "faggot@nike.gay"
+	corp.email "mike@nike.com"
 	corp.password "password"
 	corp.password_confirmation "password"
 	corp.remember_me true

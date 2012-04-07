@@ -6,8 +6,8 @@ describe AdsController do
   
   	# Setting up a corporation and their attributes
   	before(:each) do
-  		@attr = { :name => "Nike Faggots", 
-  							:email => "faggot@nike.gay", 
+  		@attr = { :name => "Nike Mike", 
+  							:email => "mike@nike.com", 
   							:password => "password" ,
   							:password_confirmation => "password" ,
   							:remember_me => true }

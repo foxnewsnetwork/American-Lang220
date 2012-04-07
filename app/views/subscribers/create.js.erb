@@ -1,0 +1,6 @@
+$('#sub_form').hide();
+$('.alert').remove();
+$('#response').hide();
+$('#response').append("<% if @success %><div class='alert alert-success'><p><%= @msg %></p></div><% else %><div class='alert alert-error'><%= escape_javascript(render 'shared/error_messages',:object=>@subscriber) %></div><% end %>");
+$('#response').slideDown(500);
+

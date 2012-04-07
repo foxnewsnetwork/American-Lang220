@@ -61,23 +61,19 @@ class AdsController < ApplicationController
 
 	# Get from user account
   def show
-  	# IMPLEMENT ME, YOU FAGGOT!
     @ad = Ad.find(params[:id])
   end
 
 	# Put from corporation account
   def edit
-    	# IMPLEMENT ME, YOU FAGGOT!
   end
   
   # Put method for update purposes
   def update
-  	# Implement me, you faggot
   end
 
 	# Get from user account
   def interact
-    	# IMPLEMENT ME, YOU FAGGOT!
   end
 
 end

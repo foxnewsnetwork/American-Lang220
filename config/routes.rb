@@ -16,6 +16,8 @@ AmericanLang220::Application.routes.draw do
 
   get "communications/transfer"
 	
+	resources :subscribers, :only=>[:create] do
+	end
 	# Full access for corporations
 	scope "corporation" do
 		resources :ads do

@@ -1,8 +1,10 @@
 <% if object.errors.any? %>
   <div id='error_explanation'>  
-    <h2>Oops, you're a moron. Please check the following <%= pluralize( object.errors.count, "field" ) %>:</h2>  
+    <p>Oops. Please check the following <%= pluralize( object.errors.count, "field" ) %>:</p>  
     <% object.errors.full_messages.each do |msg| %> 
-    <p><%= msg %></p> 
+		<ul>
+    <li><%= msg %></li> 
+		</ul>
     <% end %>
   </div>  
 <% end %>  
