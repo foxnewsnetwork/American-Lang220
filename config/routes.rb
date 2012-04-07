@@ -1,5 +1,7 @@
 AmericanLang220::Application.routes.draw do
 
+  get "subscribers/create"
+
   get "docs/javascript"
 
   get "docs/curl"
@@ -84,6 +86,8 @@ AmericanLang220::Application.routes.draw do
   root :to => "pages#index"
 
 AmericanLang220::Application.routes.draw do
+  get "subscribers/create"
+
   get "docs/javascript"
 
   get "docs/curl"
