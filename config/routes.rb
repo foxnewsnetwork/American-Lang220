@@ -1,21 +1,16 @@
 AmericanLang220::Application.routes.draw do
 
   get "subscribers/create"
-
   get "docs/javascript"
-
   get "docs/curl"
-
   get "docs/ruby"
-
   get "docs/java"
-
   get "docs/python"
-
   get "docs/php"
-
   get "communications/transfer"
 	
+	match "/front", :to=>"pages#front"
+
 	resources :subscribers, :only=>[:create] do
 	end
 	# Full access for corporations

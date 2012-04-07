@@ -7,6 +7,15 @@ class PagesController < ApplicationController
    @toolbar[:home] = 'active'
   end
 
+  def front
+    @betasignups = Betasignups.all
+    @toolbar = @@toolbar_hash.clone
+    @toolbar[:index] = 'active'
+		@home = 'active'
+		@location = 'Home'
+		render :layout=>false
+  end
+
   def partner
   end
 
