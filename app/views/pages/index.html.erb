@@ -12,19 +12,23 @@
 				InGidio enables real shopping in your games
 				</p>
         <p>
-			 	Just copy and paste some code and we will take of the rest for you
+			 	Just copy and paste some code, or use an URL
 				</p>
 				<p>
-				Yes, it's that simple.
+				and we will take of the rest for you
 				</p>
-	<br>
+		
+				<br>
+				<p>
+				Yes, it's that simple. Be the first to try it for our launch!
+				</p>
 
   <p>
     <%= form_for "subscriber", :url => subscribers_path, :method=>'post',:remote=>true,:id=>'sub_form' do |f| %>                                      
       <div id='response' style="display:none;width:40.5em">
       </div>
       <%= f.text_field :email, :style=>'font-size:2em;height:2em;width:15em' %> 
-      <%= f.submit "Sign Up",:class=>"btn btn-primary btn-large",:style=>'height:2em;font-size:2em;' %>                                             
+      <%= f.submit "Join Beta",:class=>"btn btn-primary btn-large",:style=>'height:2em;font-size:2em;' %>                                             
     <% end %>
   </p>
 
