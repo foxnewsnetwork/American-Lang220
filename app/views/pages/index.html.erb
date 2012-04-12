@@ -6,18 +6,34 @@
         <font color="#0065d0"><h1>Sell Real Products in Games</h1></font>
 				<p></p>
         <p>
-				Why settle for virtual items when you can sell real goods
+				InGidio enables in-game real product shopping
 				</p>
         <p>
-				InGidio enables real shopping in your games
+			 	Just copy and paste <a href="#" id="display_js_control" onclick="display_code('js_exp');">some code</a>, 
+				or use <a href="#" id="display_curl_control" onclick="display_code('curl_exp');">urls</a>
 				</p>
-        <p>
-			 	Just copy and paste some code, or use an URL
-				</p>
+				<div id="js_exp" class="" style="display:none">
+					<%= render "js_exp" %>
+				</div>
+				<div id="curl_exp" class="" style="display:none">
+					<%= render "curl_exp" %>
+				</div>
+				<script>
+					function display_code(id_tag) {
+						if (id_tag == "js_exp") {
+							$("#js_exp").show();
+							$("#curl_exp").hide();
+							$("#display_js_control").attr("onclick","$('#js_exp').hide();$(this).attr(\"onclick\",\"display_code('js_exp');\");");
+						} else {
+							$("#js_exp").hide();
+							$("#curl_exp").show();
+							$("#display_curl_control").attr("onclick","$('#curl_exp').hide();$(this).attr(\"onclick\",\"display_code('curl_exp');\")");
+						}
+					}					
+				</script>
 				<p>
 				and we will take of the rest for you
 				</p>
-		
 				<br>
 				<p>
 				Yes, it's that simple. Be the first to try it!
